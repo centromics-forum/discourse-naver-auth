@@ -1,0 +1,8 @@
+ko:
+  js:
+    login:
+      naver:
+        name: "네이버"
+        title: "네이버로 로그인"
+        sr_title: "네이버로 로그인"
+        message: "네이버로 로그인"
