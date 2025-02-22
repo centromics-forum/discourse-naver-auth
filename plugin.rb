@@ -9,19 +9,33 @@
 gem 'omniauth-naver','0.2.0'
 enabled_site_setting :enable_naver_logins
 
-class NaverAuthenticator < ::Auth::ManagedAuthenticator
+class Auth::NaverAuthenticator < Auth::ManagedAuthenticator
+  AVATAR_SIZE ||= 480
+
   def name
     "naver"
   end
 
   def enabled?
-    SiteSetting.enable_naver_logins?
+    SiteSetting.enable_naver_logins
   end
 
-  # apple requires email verification to create an account so we can assume
-  # email is verified
+  def register_middleware(omniauth)
+    omniauth.provider :naver,
+                      setup:
+                        lambda { |env|
+                          strategy = env["omniauth.strategy"]
+                          strategy.options[:client_id] = SiteSetting.naver_client_id
+                          strategy.options[:client_secret] = SiteSetting.naver_secret
+                        }
+  end
+
+  # facebook doesn't return unverified email addresses so it's safe to assume
+  # whatever email we get from them is verified
+  # https://developers.facebook.com/docs/graph-api/reference/user/
   def primary_email_verified?(auth_token)
     true
   end
 end
 
+auth_provider  authenticator: NaverAuthenticator.new
