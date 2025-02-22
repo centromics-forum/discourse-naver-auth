@@ -1,3 +1,8 @@
 plugins:
-  sign_in_with_naver_enabled: false
-
+  enable_naver_logins:
+    default: false
+  naver_client_id:
+    default: ""
+  naver_secret:
+    default: ""
+    secret: true
