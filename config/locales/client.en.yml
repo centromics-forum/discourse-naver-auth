@@ -2,7 +2,7 @@ en:
   js:
     login:
       naver:
-        name: "naver"
-        title: "Sign in with naver"
-        sr_title: "Sign in with naver"
-        message: "Sign in with naver"
+        name: "Naver"
+        title: "Sign in with Naver"
+        sr_title: "Sign in with Naver"
+        message: "Sign in with Naver"

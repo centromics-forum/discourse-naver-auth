@@ -7,9 +7,12 @@
 # url: https://github.com/centromics-forum/discourse-naver-auth
 
 gem 'omniauth-naver','0.2.0'
+
+register_svg_icon "naver"
+
 enabled_site_setting :enable_naver_logins
 
-class Auth::NaverAuthenticator < Auth::ManagedAuthenticator
+class NaverAuthenticator < Auth::ManagedAuthenticator
   AVATAR_SIZE ||= 480
 
   def name
@@ -38,4 +41,4 @@ class Auth::NaverAuthenticator < Auth::ManagedAuthenticator
   end
 end
 
-auth_provider  authenticator: NaverAuthenticator.new
+auth_provider  icon: "naver", authenticator: NaverAuthenticator.new
