@@ -8,8 +8,7 @@
 
 gem 'omniauth-naver','0.2.0'
 
-register_svg_icon "naver"
-
+register_asset "stylesheets/naver.css"
 enabled_site_setting :enable_naver_logins
 
 class NaverAuthenticator < Auth::ManagedAuthenticator
@@ -41,4 +40,4 @@ class NaverAuthenticator < Auth::ManagedAuthenticator
   end
 end
 
-auth_provider  icon: "naver", authenticator: NaverAuthenticator.new
+auth_provider  authenticator: NaverAuthenticator.new
