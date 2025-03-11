@@ -1,9 +1,9 @@
 ## Discourse Naver Login Auth
-correct answer, management function and provides main page summary link
+Login to Discourse using 'Sign in with Naver'
 
 ## Installation
 
-1. docker   
+1. Default(docker)   
    edit container/app.yml
 ``` dockerfile
 hooks:
@@ -11,11 +11,10 @@ after_code:
 - exec:
   cd: $home/plugins
   cmd:
-- rm -Rf poll
 - git clone https://github.com/centromics-forum/discourse-naver-auth.git
 ```
 
-2. source
+2. Used in source code
 
 ``` shell
 $ cd $home/plugins
@@ -25,14 +24,16 @@ $ bundle install
 ```
 
 ## How to use
+Go to admin
+
+Go to Plugins -> Naver Auth  And Enable And Click Settings 
+
+Enable "enable naver logins" And Fill And Save "naver client id" and "naver secret"
 
 
 
 ## Screenshots
 ![앱 화면](screenshot.jpg)
-
-## Read More
-
 
 
 ## License
