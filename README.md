@@ -29,7 +29,7 @@ $ bundle install
 
 
 ## Screenshots
-
+![앱 화면](screenshot.jpg)
 
 ## Read More
 
