@@ -24,12 +24,11 @@ $ bundle install
 ```
 
 ## How to use
-Go to admin
+Go to Admin
 
 Go to Plugins -> Naver Auth  And Enable And Click Settings 
 
-Enable "enable naver logins" And Fill And Save "naver client id" and "naver secret"
-
+Check "enable naver logins" And Fill "naver client id","naver secret" And Save
 
 
 ## Screenshots
